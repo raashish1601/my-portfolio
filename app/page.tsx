@@ -12,7 +12,6 @@ import {
   Code,
   Briefcase,
   GraduationCap,
-  Award,
   ChevronDown,
   Zap,
   Target,
@@ -20,6 +19,7 @@ import {
   TrendingUp,
   Menu,
   X,
+  Award,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -193,6 +193,17 @@ export default function Portfolio() {
         "Implemented authentication, shopping cart, and checkout logic",
       ],
     },
+  ]
+
+  const clientLogos = [
+    { name: "CARS24", logo: "/placeholder.svg?height=60&width=120", url: "https://cars24.com" },
+    { name: "GeeksforGeeks", logo: "/placeholder.svg?height=60&width=120", url: "https://geeksforgeeks.org" },
+    { name: "Nagarro", logo: "/placeholder.svg?height=60&width=120", url: "https://nagarro.com" },
+    { name: "BIKES24", logo: "/placeholder.svg?height=60&width=120", url: "https://bikes24.com" },
+    { name: "Team-BHP", logo: "/placeholder.svg?height=60&width=120", url: "https://team-bhp.com" },
+    { name: "React", logo: "/placeholder.svg?height=60&width=120", url: "#" },
+    { name: "Next.js", logo: "/placeholder.svg?height=60&width=120", url: "#" },
+    { name: "TypeScript", logo: "/placeholder.svg?height=60&width=120", url: "#" },
   ]
 
   // Loading screen
@@ -1076,6 +1087,278 @@ export default function Portfolio() {
                 </Card>
               </motion.div>
             ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Technologies & Skills Carousel - NEW INFINITE CAROUSEL */}
+      <section className="py-12 sm:py-20 relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12 sm:mb-16"
+          >
+            <motion.h2
+              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-emerald-400 to-green-400 bg-clip-text text-transparent"
+              whileInView={{ scale: [0.9, 1.05, 1] }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              Technologies I Work With
+            </motion.h2>
+            <motion.div
+              className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-green-500 mx-auto mb-8"
+              initial={{ width: 0 }}
+              whileInView={{ width: 96 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            />
+            <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto px-4">
+              Modern frontend technologies and tools I use to build exceptional web experiences
+            </p>
+          </motion.div>
+
+          {/* Technologies Carousel */}
+          <div className="relative overflow-hidden">
+            <motion.div
+              className="flex space-x-8 items-center"
+              animate={{
+                x: [0, -100 * 12],
+              }}
+              transition={{
+                x: {
+                  repeat: Number.POSITIVE_INFINITY,
+                  repeatType: "loop",
+                  duration: 30,
+                  ease: "linear",
+                },
+              }}
+              style={{ width: "200%" }}
+            >
+              {[
+                { name: "React JS", icon: "⚛️", color: "from-blue-400 to-cyan-400", description: "Component Library" },
+                { name: "Next.js", icon: "▲", color: "from-gray-600 to-gray-800", description: "Full-Stack Framework" },
+                { name: "TypeScript", icon: "TS", color: "from-blue-600 to-blue-800", description: "Type Safety" },
+                {
+                  name: "JavaScript",
+                  icon: "JS",
+                  color: "from-yellow-400 to-yellow-600",
+                  description: "Core Language",
+                },
+                {
+                  name: "Redux/RTK",
+                  icon: "🔄",
+                  color: "from-purple-500 to-purple-700",
+                  description: "State Management",
+                },
+                {
+                  name: "Tailwind CSS",
+                  icon: "🎨",
+                  color: "from-teal-400 to-teal-600",
+                  description: "Utility-First CSS",
+                },
+                {
+                  name: "React Storybook",
+                  icon: "📚",
+                  color: "from-pink-500 to-pink-700",
+                  description: "Component Documentation",
+                },
+                {
+                  name: "Performance Optimization",
+                  icon: "⚡",
+                  color: "from-green-500 to-green-700",
+                  description: "Web Vitals & Speed",
+                },
+                {
+                  name: "Git & GitHub",
+                  icon: "🔧",
+                  color: "from-orange-500 to-red-500",
+                  description: "Version Control",
+                },
+                {
+                  name: "Responsive Design",
+                  icon: "📱",
+                  color: "from-indigo-500 to-purple-500",
+                  description: "Mobile-First",
+                },
+                {
+                  name: "SEO Optimization",
+                  icon: "🔍",
+                  color: "from-emerald-500 to-green-500",
+                  description: "Search Engine Optimization",
+                },
+                {
+                  name: "CMS Integration",
+                  icon: "📝",
+                  color: "from-cyan-500 to-blue-500",
+                  description: "Content Management",
+                },
+                // Duplicate for seamless loop
+                { name: "React JS", icon: "⚛️", color: "from-blue-400 to-cyan-400", description: "Component Library" },
+                { name: "Next.js", icon: "▲", color: "from-gray-600 to-gray-800", description: "Full-Stack Framework" },
+                { name: "TypeScript", icon: "TS", color: "from-blue-600 to-blue-800", description: "Type Safety" },
+                {
+                  name: "JavaScript",
+                  icon: "JS",
+                  color: "from-yellow-400 to-yellow-600",
+                  description: "Core Language",
+                },
+                {
+                  name: "Redux/RTK",
+                  icon: "🔄",
+                  color: "from-purple-500 to-purple-700",
+                  description: "State Management",
+                },
+                {
+                  name: "Tailwind CSS",
+                  icon: "🎨",
+                  color: "from-teal-400 to-teal-600",
+                  description: "Utility-First CSS",
+                },
+                {
+                  name: "React Storybook",
+                  icon: "📚",
+                  color: "from-pink-500 to-pink-700",
+                  description: "Component Documentation",
+                },
+                {
+                  name: "Performance Optimization",
+                  icon: "⚡",
+                  color: "from-green-500 to-green-700",
+                  description: "Web Vitals & Speed",
+                },
+                {
+                  name: "Git & GitHub",
+                  icon: "🔧",
+                  color: "from-orange-500 to-red-500",
+                  description: "Version Control",
+                },
+                {
+                  name: "Responsive Design",
+                  icon: "📱",
+                  color: "from-indigo-500 to-purple-500",
+                  description: "Mobile-First",
+                },
+                {
+                  name: "SEO Optimization",
+                  icon: "🔍",
+                  color: "from-emerald-500 to-green-500",
+                  description: "Search Engine Optimization",
+                },
+                {
+                  name: "CMS Integration",
+                  icon: "📝",
+                  color: "from-cyan-500 to-blue-500",
+                  description: "Content Management",
+                },
+              ].map((tech, index) => (
+                <motion.div
+                  key={`${tech.name}-${index}`}
+                  className="flex-shrink-0"
+                  whileHover={{ scale: 1.1, y: -5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <Card
+                    className={`bg-gradient-to-br ${tech.color}/20 border-2 border-transparent hover:border-emerald-500/30 transition-all duration-300 group w-48 h-32`}
+                  >
+                    <CardContent className="p-4 h-full flex flex-col justify-center items-center text-center relative overflow-hidden">
+                      <motion.div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+
+                      <motion.div
+                        className="text-3xl mb-2"
+                        animate={{
+                          rotate: tech.name === "React JS" ? [0, 360] : 0,
+                          scale: [1, 1.1, 1],
+                        }}
+                        transition={{
+                          rotate: { duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "linear" },
+                          scale: { duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
+                        }}
+                      >
+                        {tech.icon}
+                      </motion.div>
+
+                      <h4
+                        className={`font-bold text-sm mb-1 bg-gradient-to-r ${tech.color} bg-clip-text text-transparent`}
+                      >
+                        {tech.name}
+                      </h4>
+
+                      <p className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors">
+                        {tech.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+
+          {/* Achievement Stats */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6"
+          >
+            {[
+              { value: "70%", label: "Bundle Size Reduction", icon: "📦", color: "emerald" },
+              { value: "30%", label: "Search Performance Boost", icon: "🔍", color: "blue" },
+              { value: "40%", label: "Revenue Increase", icon: "📈", color: "green" },
+              { value: "50K+", label: "Users Reached", icon: "👥", color: "purple" },
+            ].map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                whileHover={{ scale: 1.05, y: -5 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className={`text-center p-4 sm:p-6 bg-gradient-to-br from-${stat.color}-500/20 to-${stat.color}-600/20 rounded-lg border border-${stat.color}-500/30 hover:border-${stat.color}-400/50 transition-all duration-300`}
+              >
+                <motion.div
+                  className="text-2xl sm:text-3xl mb-2"
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, delay: index * 0.5 }}
+                >
+                  {stat.icon}
+                </motion.div>
+                <motion.div
+                  className={`text-2xl sm:text-3xl font-bold text-${stat.color}-400 mb-1`}
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  transition={{ delay: index * 0.1, type: "spring" }}
+                  viewport={{ once: true }}
+                >
+                  {stat.value}
+                </motion.div>
+                <div className="text-xs sm:text-sm text-gray-300">{stat.label}</div>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Floating Elements */}
+          <motion.div
+            className="absolute top-20 left-10 text-4xl opacity-20"
+            animate={floatingAnimation}
+            transition={{ ...floatingAnimation.transition, delay: 0 }}
+          >
+            💻
+          </motion.div>
+          <motion.div
+            className="absolute bottom-20 right-10 text-3xl opacity-20"
+            animate={floatingAnimation}
+            transition={{ ...floatingAnimation.transition, delay: 1.5 }}
+          >
+            🚀
+          </motion.div>
+          <motion.div
+            className="absolute top-1/2 right-5 text-2xl opacity-20"
+            animate={floatingAnimation}
+            transition={{ ...floatingAnimation.transition, delay: 3 }}
+          >
+            ⚡
           </motion.div>
         </div>
       </section>
