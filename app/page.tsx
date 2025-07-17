@@ -20,6 +20,9 @@ import {
   Menu,
   X,
   Award,
+  Star,
+  Trophy,
+  Sparkles,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -195,15 +198,30 @@ export default function Portfolio() {
     },
   ]
 
-  const clientLogos = [
-    { name: "CARS24", logo: "/placeholder.svg?height=60&width=120", url: "https://cars24.com" },
-    { name: "GeeksforGeeks", logo: "/placeholder.svg?height=60&width=120", url: "https://geeksforgeeks.org" },
-    { name: "Nagarro", logo: "/placeholder.svg?height=60&width=120", url: "https://nagarro.com" },
-    { name: "BIKES24", logo: "/placeholder.svg?height=60&width=120", url: "https://bikes24.com" },
-    { name: "Team-BHP", logo: "/placeholder.svg?height=60&width=120", url: "https://team-bhp.com" },
-    { name: "React", logo: "/placeholder.svg?height=60&width=120", url: "#" },
-    { name: "Next.js", logo: "/placeholder.svg?height=60&width=120", url: "#" },
-    { name: "TypeScript", logo: "/placeholder.svg?height=60&width=120", url: "#" },
+  // Technologies data for carousel
+  const technologies = [
+    { name: "React JS", icon: "⚛️", color: "from-blue-400 to-cyan-400", description: "Component Library" },
+    { name: "Next.js", icon: "▲", color: "from-gray-600 to-gray-800", description: "Full-Stack Framework" },
+    { name: "TypeScript", icon: "TS", color: "from-blue-600 to-blue-800", description: "Type Safety" },
+    { name: "JavaScript", icon: "JS", color: "from-yellow-400 to-yellow-600", description: "Core Language" },
+    { name: "Redux/RTK", icon: "🔄", color: "from-purple-500 to-purple-700", description: "State Management" },
+    { name: "Tailwind CSS", icon: "🎨", color: "from-teal-400 to-teal-600", description: "Utility-First CSS" },
+    { name: "React Storybook", icon: "📚", color: "from-pink-500 to-pink-700", description: "Component Documentation" },
+    {
+      name: "Performance Optimization",
+      icon: "⚡",
+      color: "from-green-500 to-green-700",
+      description: "Web Vitals & Speed",
+    },
+    { name: "Git & GitHub", icon: "🔧", color: "from-orange-500 to-red-500", description: "Version Control" },
+    { name: "Responsive Design", icon: "📱", color: "from-indigo-500 to-purple-500", description: "Mobile-First" },
+    {
+      name: "SEO Optimization",
+      icon: "🔍",
+      color: "from-emerald-500 to-green-500",
+      description: "Search Engine Optimization",
+    },
+    { name: "CMS Integration", icon: "📝", color: "from-cyan-500 to-blue-500", description: "Content Management" },
   ]
 
   // Loading screen
@@ -472,7 +490,7 @@ export default function Portfolio() {
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.95 }}>
               <Button
                 variant="outline"
-                className="border-emerald-400 text-emerald-400 hover:bg-emerald-400 hover:text-black px-6 sm:px-8 py-3 rounded-full bg-transparent w-full sm:w-auto"
+                className="border-emerald-400 text-emerald-400 hover:bg-emerald-400/10 hover:text-emerald-300 hover:border-emerald-300 px-6 sm:px-8 py-3 rounded-full bg-transparent w-full sm:w-auto transition-all duration-300"
                 onClick={() => window.open("https://github.com/raashish1601", "_blank")}
               >
                 <Github className="w-4 h-4 mr-2" />
@@ -498,231 +516,242 @@ export default function Portfolio() {
         </motion.div>
       </section>
 
-      {/* Awards Section */}
-      <section className="py-12 sm:py-20 relative overflow-hidden">
-        <div className="container mx-auto px-4 sm:px-6">
+      {/* REDESIGNED Awards Section */}
+      <section className="py-16 sm:py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 via-orange-500/5 to-red-500/5" />
+
+        {/* Floating Award Elements */}
+        <motion.div
+          className="absolute top-10 left-10 text-6xl opacity-10"
+          animate={{ rotate: [0, 360], scale: [1, 1.2, 1] }}
+          transition={{ duration: 8, repeat: Number.POSITIVE_INFINITY }}
+        >
+          🏆
+        </motion.div>
+        <motion.div
+          className="absolute top-20 right-20 text-4xl opacity-10"
+          animate={{ y: [-10, 10, -10], rotate: [0, 180, 360] }}
+          transition={{ duration: 6, repeat: Number.POSITIVE_INFINITY }}
+        >
+          ⭐
+        </motion.div>
+        <motion.div
+          className="absolute bottom-20 left-20 text-5xl opacity-10"
+          animate={{ x: [-10, 10, -10], scale: [1, 1.3, 1] }}
+          transition={{ duration: 7, repeat: Number.POSITIVE_INFINITY }}
+        >
+          🎯
+        </motion.div>
+
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-12 sm:mb-16"
+            className="text-center mb-16"
           >
-            <motion.h2
-              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent"
-              whileInView={{ scale: [0.9, 1.05, 1] }}
-              transition={{ duration: 0.6 }}
+            <motion.div
+              className="inline-flex items-center gap-3 mb-6"
+              whileInView={{ scale: [0.8, 1.1, 1] }}
+              transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              🏆 Action Hero Award Winner
-            </motion.h2>
+              <motion.div
+                animate={{ rotate: [0, 360] }}
+                transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+              >
+                <Trophy className="w-8 h-8 text-amber-400" />
+              </motion.div>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-amber-400 via-orange-500 to-red-500 bg-clip-text text-transparent">
+                Action Hero Award Winner
+              </h2>
+              <motion.div
+                animate={{ scale: [1, 1.3, 1] }}
+                transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+              >
+                <Sparkles className="w-8 h-8 text-amber-400" />
+              </motion.div>
+            </motion.div>
+
             <motion.div
-              className="w-24 sm:w-32 h-1 bg-gradient-to-r from-yellow-500 to-red-500 mx-auto mb-6 sm:mb-8"
+              className="w-32 h-1 bg-gradient-to-r from-amber-500 to-red-500 mx-auto mb-8"
               initial={{ width: 0 }}
               whileInView={{ width: "8rem" }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 1, delay: 0.3 }}
               viewport={{ once: true }}
             />
+
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
               viewport={{ once: true }}
-              className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto px-4"
+              className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto"
             >
-              Sole recipient of CARS24's prestigious Action Hero Award for exceptional contribution to BIKES24 platform
+              Sole recipient of CARS24's most prestigious recognition for exceptional performance and raising standards
+              of excellence
             </motion.p>
           </motion.div>
 
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
+              initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, type: "spring" }}
               viewport={{ once: true }}
-              className="relative"
             >
-              {/* Floating trophy icons - Hidden on mobile */}
-              <motion.div
-                className="absolute -top-10 -left-10 text-4xl sm:text-6xl hidden sm:block"
-                animate={floatingAnimation}
-                transition={{ ...floatingAnimation.transition, delay: 0 }}
-              >
-                🏆
-              </motion.div>
-              <motion.div
-                className="absolute -top-5 -right-10 text-3xl sm:text-4xl hidden sm:block"
-                animate={floatingAnimation}
-                transition={{ ...floatingAnimation.transition, delay: 1 }}
-              >
-                ⭐
-              </motion.div>
-              <motion.div
-                className="absolute -bottom-5 -left-5 text-4xl sm:text-5xl hidden sm:block"
-                animate={floatingAnimation}
-                transition={{ ...floatingAnimation.transition, delay: 2 }}
-              >
-                🎯
-              </motion.div>
-
-              <Card className="bg-gradient-to-br from-yellow-500/10 via-orange-500/10 to-red-500/10 border-2 border-yellow-500/30 backdrop-blur-md overflow-hidden">
+              <Card className="bg-gradient-to-br from-slate-900/80 via-slate-800/80 to-slate-900/80 border border-amber-500/20 backdrop-blur-xl overflow-hidden shadow-2xl">
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-yellow-500/5 to-red-500/5"
+                  className="absolute inset-0 bg-gradient-to-r from-amber-500/5 via-orange-500/5 to-red-500/5"
                   animate={{
                     backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
                   }}
-                  transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
+                  transition={{ duration: 8, repeat: Number.POSITIVE_INFINITY }}
                 />
 
-                <CardContent className="p-4 sm:p-8 relative z-10">
-                  <div className="grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
+                <CardContent className="p-6 sm:p-12 relative z-10">
+                  <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
                     {/* Award Images */}
-                    <div className="space-y-4 sm:space-y-6">
+                    <div className="space-y-6">
                       <motion.div
-                        whileHover={{ scale: 1.02, rotateY: 10 }}
+                        whileHover={{ scale: 1.03, rotateY: 5 }}
                         transition={{ type: "spring", stiffness: 300 }}
                         className="relative group"
                       >
-                        <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/20 to-red-500/20 rounded-lg blur-xl group-hover:blur-2xl transition-all duration-300" />
-                        <img
-                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-s0BR1bhcpbWx3lVwkYToLdXRaomLSA.png"
-                          alt="Action Hero Award Certificate"
-                          className="w-full rounded-lg shadow-2xl relative z-10 border-2 border-yellow-500/30"
-                        />
-                        <motion.div
-                          className="absolute -top-2 -right-2 text-2xl sm:text-3xl"
-                          animate={{ rotate: [0, 10, -10, 0] }}
-                          transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-                        >
-                          🌟
-                        </motion.div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-amber-500/20 to-orange-500/20 rounded-xl blur-2xl group-hover:blur-3xl transition-all duration-500" />
+                        <div className="relative overflow-hidden rounded-xl border-2 border-amber-500/30 group-hover:border-amber-400/50 transition-all duration-300">
+                          <img
+                            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-s0BR1bhcpbWx3lVwkYToLdXRaomLSA.png"
+                            alt="Action Hero Award Certificate"
+                            className="w-full h-auto shadow-2xl"
+                          />
+                          <motion.div
+                            className="absolute -top-3 -right-3 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full p-2"
+                            animate={{ rotate: [0, 360] }}
+                            transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
+                          >
+                            <Star className="w-6 h-6 text-white" />
+                          </motion.div>
+                        </div>
                       </motion.div>
 
                       <motion.div
-                        whileHover={{ scale: 1.02, rotateY: -10 }}
+                        whileHover={{ scale: 1.03, rotateY: -5 }}
                         transition={{ type: "spring", stiffness: 300 }}
                         className="relative group"
                       >
-                        <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-yellow-500/20 rounded-lg blur-xl group-hover:blur-2xl transition-all duration-300" />
-                        <img
-                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-0RluWLPNVNA2tJvwdsQHcu0evFtSv7.png"
-                          alt="Award Ceremony at CARS24"
-                          className="w-full rounded-lg shadow-2xl relative z-10 border-2 border-orange-500/30"
-                        />
-                        <motion.div
-                          className="absolute -bottom-2 -left-2 text-2xl sm:text-3xl"
-                          animate={{ scale: [1, 1.2, 1] }}
-                          transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY }}
-                        >
-                          🎉
-                        </motion.div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-xl blur-2xl group-hover:blur-3xl transition-all duration-500" />
+                        <div className="relative overflow-hidden rounded-xl border-2 border-orange-500/30 group-hover:border-orange-400/50 transition-all duration-300">
+                          <img
+                            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-0RluWLPNVNA2tJvwdsQHcu0evFtSv7.png"
+                            alt="Award Ceremony at CARS24"
+                            className="w-full h-auto shadow-2xl"
+                          />
+                          <motion.div
+                            className="absolute -bottom-3 -left-3 bg-gradient-to-r from-orange-400 to-red-500 rounded-full p-2"
+                            animate={{ scale: [1, 1.2, 1] }}
+                            transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+                          >
+                            <Trophy className="w-6 h-6 text-white" />
+                          </motion.div>
+                        </div>
                       </motion.div>
                     </div>
 
                     {/* Award Details */}
-                    <div className="space-y-4 sm:space-y-6">
+                    <div className="space-y-8">
                       <motion.div
                         initial={{ opacity: 0, x: 50 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.2, duration: 0.6 }}
+                        transition={{ delay: 0.3, duration: 0.8 }}
                         viewport={{ once: true }}
                       >
-                        <h3 className="text-2xl sm:text-3xl font-bold text-yellow-400 mb-4 flex items-center">
-                          <motion.span
+                        <div className="flex items-center gap-4 mb-6">
+                          <motion.div
                             animate={{ rotate: [0, 360] }}
-                            transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-                            className="mr-3 text-3xl sm:text-4xl"
+                            transition={{ duration: 6, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+                            className="w-16 h-16 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full flex items-center justify-center"
                           >
-                            🏆
-                          </motion.span>
-                          Action Hero Award
-                        </h3>
-                        <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-6">
-                          <strong className="text-yellow-400">Sole recipient</strong> of CARS24's most prestigious
-                          recognition for
-                          <strong className="text-orange-400"> exemplary performance</strong> and
-                          <strong className="text-red-400"> raising standards of excellence</strong> in the BIKES24
-                          platform development.
+                            <Trophy className="w-8 h-8 text-white" />
+                          </motion.div>
+                          <div>
+                            <h3 className="text-2xl sm:text-3xl font-bold text-amber-400">Action Hero Award</h3>
+                            <p className="text-orange-400 font-medium">December 2024</p>
+                          </div>
+                        </div>
+
+                        <p className="text-gray-300 text-lg leading-relaxed mb-8">
+                          Recognized as the <span className="text-amber-400 font-semibold">sole recipient</span> of
+                          CARS24's most prestigious award for
+                          <span className="text-orange-400 font-semibold"> exemplary performance</span> and
+                          <span className="text-red-400 font-semibold"> raising standards of excellence</span> in the
+                          BIKES24 platform development.
                         </p>
                       </motion.div>
 
                       <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.4, duration: 0.6 }}
+                        transition={{ delay: 0.5, duration: 0.8 }}
                         viewport={{ once: true }}
-                        className="grid grid-cols-2 gap-3 sm:gap-4"
+                        className="grid grid-cols-2 gap-4"
                       >
-                        <Card className="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 border-yellow-500/30 p-3 sm:p-4 text-center">
-                          <CardContent className="p-0">
+                        {[
+                          {
+                            icon: "🎯",
+                            title: "Sole Winner",
+                            desc: "Only recipient",
+                            color: "from-amber-500 to-orange-500",
+                          },
+                          {
+                            icon: "📈",
+                            title: "Excellence",
+                            desc: "Standards raised",
+                            color: "from-orange-500 to-red-500",
+                          },
+                          { icon: "🚀", title: "BIKES24", desc: "Platform impact", color: "from-red-500 to-pink-500" },
+                          { icon: "💎", title: "Recent", desc: "Dec 2024", color: "from-purple-500 to-blue-500" },
+                        ].map((item, index) => (
+                          <motion.div
+                            key={item.title}
+                            whileHover={{ scale: 1.05, y: -5 }}
+                            transition={{ type: "spring", stiffness: 300 }}
+                            className={`text-center p-4 bg-gradient-to-br ${item.color}/20 rounded-xl border border-white/10 hover:border-white/20 transition-all duration-300`}
+                          >
                             <motion.div
-                              className="text-xl sm:text-2xl mb-2"
+                              className="text-3xl mb-2"
                               animate={{ scale: [1, 1.2, 1] }}
-                              transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+                              transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, delay: index * 0.5 }}
                             >
-                              🎯
+                              {item.icon}
                             </motion.div>
-                            <div className="text-sm sm:text-lg font-bold text-yellow-400">Sole Winner</div>
-                            <div className="text-xs text-gray-300">Only recipient</div>
-                          </CardContent>
-                        </Card>
-
-                        <Card className="bg-gradient-to-br from-orange-500/20 to-red-500/20 border-orange-500/30 p-3 sm:p-4 text-center">
-                          <CardContent className="p-0">
-                            <motion.div
-                              className="text-xl sm:text-2xl mb-2"
-                              animate={{ rotate: [0, 10, -10, 0] }}
-                              transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY }}
-                            >
-                              📈
-                            </motion.div>
-                            <div className="text-sm sm:text-lg font-bold text-orange-400">Standards Raised</div>
-                            <div className="text-xs text-gray-300">Excellence Achieved</div>
-                          </CardContent>
-                        </Card>
-
-                        <Card className="bg-gradient-to-br from-red-500/20 to-pink-500/20 border-red-500/30 p-3 sm:p-4 text-center">
-                          <CardContent className="p-0">
-                            <motion.div
-                              className="text-xl sm:text-2xl mb-2"
-                              animate={{ y: [-5, 5, -5] }}
-                              transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-                            >
-                              🚀
-                            </motion.div>
-                            <div className="text-sm sm:text-lg font-bold text-red-400">BIKES24</div>
-                            <div className="text-xs text-gray-300">Platform Impact</div>
-                          </CardContent>
-                        </Card>
-
-                        <Card className="bg-gradient-to-br from-purple-500/20 to-blue-500/20 border-purple-500/30 p-3 sm:p-4 text-center">
-                          <CardContent className="p-0">
-                            <motion.div
-                              className="text-xl sm:text-2xl mb-2"
-                              animate={{ scale: [1, 1.1, 1] }}
-                              transition={{ duration: 1.8, repeat: Number.POSITIVE_INFINITY }}
-                            >
-                              💎
-                            </motion.div>
-                            <div className="text-sm sm:text-lg font-bold text-purple-400">Dec 2024</div>
-                            <div className="text-xs text-gray-300">Recent Achievement</div>
-                          </CardContent>
-                        </Card>
+                            <div className="text-lg font-bold text-white mb-1">{item.title}</div>
+                            <div className="text-sm text-gray-400">{item.desc}</div>
+                          </motion.div>
+                        ))}
                       </motion.div>
 
                       <motion.div
-                        initial={{ opacity: 0, scale: 0.8 }}
+                        initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.6, duration: 0.6 }}
+                        transition={{ delay: 0.7, duration: 0.8 }}
                         viewport={{ once: true }}
-                        className="bg-gradient-to-r from-yellow-500/10 to-red-500/10 rounded-lg p-4 border border-yellow-500/20"
+                        className="bg-gradient-to-r from-amber-500/10 via-orange-500/10 to-red-500/10 rounded-xl p-6 border border-amber-500/20"
                       >
-                        <p className="text-center text-gray-300 italic text-sm sm:text-base">
-                          "You've been awarded for exemplary performance and raising the standards of excellence - this
-                          month's true entrepreneur of change"
-                        </p>
-                        <div className="text-center mt-2 text-yellow-400 font-semibold text-sm sm:text-base">
-                          - CARS24 Leadership
+                        <div className="text-center">
+                          <motion.div
+                            animate={{ rotate: [0, 5, -5, 0] }}
+                            transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY }}
+                            className="text-4xl mb-4"
+                          >
+                            💬
+                          </motion.div>
+                          <p className="text-gray-300 italic text-lg mb-3">
+                            "You've been awarded for exemplary performance and raising the standards of excellence -
+                            this month's true entrepreneur of change"
+                          </p>
+                          <div className="text-amber-400 font-semibold">- CARS24 Leadership</div>
                         </div>
                       </motion.div>
                     </div>
@@ -779,20 +808,20 @@ export default function Portfolio() {
                     </p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <motion.div className="flex items-center" whileHover={{ x: 5 }}>
-                        <MapPin className="w-4 sm:w-5 h-4 sm:h-5 text-emerald-400 mr-2" />
-                        <span className="text-sm sm:text-base">Gurgaon, India</span>
+                        <MapPin className="w-4 sm:w-5 h-4 sm:h-5 text-emerald-400 mr-2 flex-shrink-0" />
+                        <span className="text-sm sm:text-base text-white">Gurgaon, India</span>
                       </motion.div>
                       <motion.div className="flex items-center" whileHover={{ x: 5 }}>
-                        <Phone className="w-4 sm:w-5 h-4 sm:h-5 text-emerald-400 mr-2" />
-                        <span className="text-sm sm:text-base">+91-8800555656</span>
+                        <Phone className="w-4 sm:w-5 h-4 sm:h-5 text-emerald-400 mr-2 flex-shrink-0" />
+                        <span className="text-sm sm:text-base text-white">+91-8800555656</span>
                       </motion.div>
                       <motion.div className="flex items-center" whileHover={{ x: 5 }}>
-                        <Mail className="w-4 sm:w-5 h-4 sm:h-5 text-emerald-400 mr-2" />
-                        <span className="text-sm sm:text-base">raashish1601@gmail.com</span>
+                        <Mail className="w-4 sm:w-5 h-4 sm:h-5 text-emerald-400 mr-2 flex-shrink-0" />
+                        <span className="text-sm sm:text-base text-white">raashish1601@gmail.com</span>
                       </motion.div>
                       <motion.div className="flex items-center" whileHover={{ x: 5 }}>
-                        <GraduationCap className="w-4 sm:w-5 h-4 sm:h-5 text-emerald-400 mr-2" />
-                        <span className="text-sm sm:text-base">B.Tech IT (8.22 CGPA)</span>
+                        <GraduationCap className="w-4 sm:w-5 h-4 sm:h-5 text-emerald-400 mr-2 flex-shrink-0" />
+                        <span className="text-sm sm:text-base text-white">B.Tech IT (8.22 CGPA)</span>
                       </motion.div>
                     </div>
                   </CardContent>
@@ -809,7 +838,7 @@ export default function Portfolio() {
             >
               <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 <motion.div whileHover={{ scale: 1.02, rotateZ: 2 }} transition={{ type: "spring", stiffness: 300 }}>
-                  <Card className="bg-gradient-to-br from-emerald-500/20 to-green-500/20 border-emerald-500/30 p-4 sm:p-6 text-center hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300">
+                  <Card className="bg-gradient-to-br from-emerald-500/20 to-green-500/20 border-emerald-500/30 p-4 sm:p-6 text-center hover:shadow-lg hover:shadow-emerald-500/20 transition-all duration-300">
                     <CardContent className="p-0">
                       <Zap className="w-6 sm:w-8 h-6 sm:h-8 text-emerald-400 mx-auto mb-2" />
                       <div className="text-lg sm:text-2xl font-bold text-emerald-400 mb-1">Problem Solver</div>
@@ -930,18 +959,23 @@ export default function Portfolio() {
             className="mt-12 sm:mt-16 grid md:grid-cols-3 gap-6 sm:gap-8"
           >
             {[
-              { icon: Code, title: "Frontend Development", desc: "React, Next.js, TypeScript, Redux", color: "blue" },
+              {
+                icon: Code,
+                title: "Frontend Development",
+                desc: "React, Next.js, TypeScript, Redux",
+                color: "from-cyan-500 to-blue-500",
+              },
               {
                 icon: Award,
                 title: "Performance Optimization",
                 desc: "Web Vitals, Bundle Optimization, SEO",
-                color: "purple",
+                color: "from-violet-500 to-purple-500",
               },
               {
                 icon: Briefcase,
                 title: "UI/UX Implementation",
                 desc: "Responsive Design, Storybook, Figma",
-                color: "green",
+                color: "from-emerald-500 to-teal-500",
               },
             ].map((item, index) => (
               <motion.div
@@ -949,21 +983,21 @@ export default function Portfolio() {
                 whileHover={{
                   scale: 1.02,
                   rotateY: 10,
-                  boxShadow: `0 20px 40px rgba(${item.color === "blue" ? "59, 130, 246" : item.color === "purple" ? "147, 51, 234" : "34, 197, 94"}, 0.3)`,
+                  boxShadow: "0 20px 40px rgba(6, 182, 212, 0.3)",
                 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <Card
-                  className={`bg-gradient-to-br from-${item.color}-500/20 to-${item.color === "blue" ? "cyan" : item.color === "purple" ? "pink" : "teal"}-500/20 border-${item.color}-500/30 p-4 sm:p-6 hover:border-${item.color}-400/50 transition-all duration-300`}
+                  className={`bg-gradient-to-br ${item.color}/20 border-2 border-transparent hover:border-white/20 p-4 sm:p-6 transition-all duration-300`}
                 >
                   <CardContent className="p-0 text-center">
                     <motion.div
                       animate={floatingAnimation}
                       transition={{ ...floatingAnimation.transition, delay: index * 0.5 }}
                     >
-                      <item.icon className={`w-10 sm:w-12 h-10 sm:h-12 text-${item.color}-400 mx-auto mb-4`} />
+                      <item.icon className="w-10 sm:w-12 h-10 sm:h-12 text-white mx-auto mb-4" />
                     </motion.div>
-                    <h3 className={`text-lg sm:text-xl font-bold mb-2 text-${item.color}-400`}>{item.title}</h3>
+                    <h3 className="text-lg sm:text-xl font-bold mb-2 text-white">{item.title}</h3>
                     <p className="text-gray-300 text-xs sm:text-sm">{item.desc}</p>
                   </CardContent>
                 </Card>
@@ -1091,7 +1125,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Technologies & Skills Carousel - FIXED INFINITE CAROUSEL */}
+      {/* Technologies & Skills Carousel - FIXED EDGE-TO-EDGE */}
       <section className="py-12 sm:py-20 relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6">
           <motion.div
@@ -1120,336 +1154,132 @@ export default function Portfolio() {
               Modern frontend technologies and tools I use to build exceptional web experiences
             </p>
           </motion.div>
+        </div>
 
-          {/* Fixed Infinite Carousel - Full Width */}
-          <div className="w-full overflow-hidden -mx-4 sm:-mx-6">
-            <div className="relative">
-              <motion.div
-                className="flex space-x-6 items-center"
-                animate={{
-                  x: [0, -100 * 6], // Move by 6 items width
-                }}
-                transition={{
-                  x: {
-                    repeat: Number.POSITIVE_INFINITY,
-                    repeatType: "loop",
-                    duration: 20,
-                    ease: "linear",
-                  },
-                }}
-                style={{ width: "max-content" }}
-              >
-                {/* Create seamless loop by tripling the array */}
-                {[
-                  { name: "React JS", icon: "⚛️", color: "from-blue-400 to-cyan-400", description: "Component Library" },
-                  {
-                    name: "Next.js",
-                    icon: "▲",
-                    color: "from-gray-600 to-gray-800",
-                    description: "Full-Stack Framework",
-                  },
-                  { name: "TypeScript", icon: "TS", color: "from-blue-600 to-blue-800", description: "Type Safety" },
-                  {
-                    name: "JavaScript",
-                    icon: "JS",
-                    color: "from-yellow-400 to-yellow-600",
-                    description: "Core Language",
-                  },
-                  {
-                    name: "Redux/RTK",
-                    icon: "🔄",
-                    color: "from-purple-500 to-purple-700",
-                    description: "State Management",
-                  },
-                  {
-                    name: "Tailwind CSS",
-                    icon: "🎨",
-                    color: "from-teal-400 to-teal-600",
-                    description: "Utility-First CSS",
-                  },
-                  {
-                    name: "React Storybook",
-                    icon: "📚",
-                    color: "from-pink-500 to-pink-700",
-                    description: "Component Documentation",
-                  },
-                  {
-                    name: "Performance Optimization",
-                    icon: "⚡",
-                    color: "from-green-500 to-green-700",
-                    description: "Web Vitals & Speed",
-                  },
-                  {
-                    name: "Git & GitHub",
-                    icon: "🔧",
-                    color: "from-orange-500 to-red-500",
-                    description: "Version Control",
-                  },
-                  {
-                    name: "Responsive Design",
-                    icon: "📱",
-                    color: "from-indigo-500 to-purple-500",
-                    description: "Mobile-First",
-                  },
-                  {
-                    name: "SEO Optimization",
-                    icon: "🔍",
-                    color: "from-emerald-500 to-green-500",
-                    description: "Search Engine Optimization",
-                  },
-                  {
-                    name: "CMS Integration",
-                    icon: "📝",
-                    color: "from-cyan-500 to-blue-500",
-                    description: "Content Management",
-                  },
-                ]
-                  .concat([
-                    {
-                      name: "React JS",
-                      icon: "⚛️",
-                      color: "from-blue-400 to-cyan-400",
-                      description: "Component Library",
-                    },
-                    {
-                      name: "Next.js",
-                      icon: "▲",
-                      color: "from-gray-600 to-gray-800",
-                      description: "Full-Stack Framework",
-                    },
-                    { name: "TypeScript", icon: "TS", color: "from-blue-600 to-blue-800", description: "Type Safety" },
-                    {
-                      name: "JavaScript",
-                      icon: "JS",
-                      color: "from-yellow-400 to-yellow-600",
-                      description: "Core Language",
-                    },
-                    {
-                      name: "Redux/RTK",
-                      icon: "🔄",
-                      color: "from-purple-500 to-purple-700",
-                      description: "State Management",
-                    },
-                    {
-                      name: "Tailwind CSS",
-                      icon: "🎨",
-                      color: "from-teal-400 to-teal-600",
-                      description: "Utility-First CSS",
-                    },
-                    {
-                      name: "React Storybook",
-                      icon: "📚",
-                      color: "from-pink-500 to-pink-700",
-                      description: "Component Documentation",
-                    },
-                    {
-                      name: "Performance Optimization",
-                      icon: "⚡",
-                      color: "from-green-500 to-green-700",
-                      description: "Web Vitals & Speed",
-                    },
-                    {
-                      name: "Git & GitHub",
-                      icon: "🔧",
-                      color: "from-orange-500 to-red-500",
-                      description: "Version Control",
-                    },
-                    {
-                      name: "Responsive Design",
-                      icon: "📱",
-                      color: "from-indigo-500 to-purple-500",
-                      description: "Mobile-First",
-                    },
-                    {
-                      name: "SEO Optimization",
-                      icon: "🔍",
-                      color: "from-emerald-500 to-green-500",
-                      description: "Search Engine Optimization",
-                    },
-                    {
-                      name: "CMS Integration",
-                      icon: "📝",
-                      color: "from-cyan-500 to-blue-500",
-                      description: "Content Management",
-                    },
-                  ])
-                  .concat([
-                    {
-                      name: "React JS",
-                      icon: "⚛️",
-                      color: "from-blue-400 to-cyan-400",
-                      description: "Component Library",
-                    },
-                    {
-                      name: "Next.js",
-                      icon: "▲",
-                      color: "from-gray-600 to-gray-800",
-                      description: "Full-Stack Framework",
-                    },
-                    { name: "TypeScript", icon: "TS", color: "from-blue-600 to-blue-800", description: "Type Safety" },
-                    {
-                      name: "JavaScript",
-                      icon: "JS",
-                      color: "from-yellow-400 to-yellow-600",
-                      description: "Core Language",
-                    },
-                    {
-                      name: "Redux/RTK",
-                      icon: "🔄",
-                      color: "from-purple-500 to-purple-700",
-                      description: "State Management",
-                    },
-                    {
-                      name: "Tailwind CSS",
-                      icon: "🎨",
-                      color: "from-teal-400 to-teal-600",
-                      description: "Utility-First CSS",
-                    },
-                    {
-                      name: "React Storybook",
-                      icon: "📚",
-                      color: "from-pink-500 to-pink-700",
-                      description: "Component Documentation",
-                    },
-                    {
-                      name: "Performance Optimization",
-                      icon: "⚡",
-                      color: "from-green-500 to-green-700",
-                      description: "Web Vitals & Speed",
-                    },
-                    {
-                      name: "Git & GitHub",
-                      icon: "🔧",
-                      color: "from-orange-500 to-red-500",
-                      description: "Version Control",
-                    },
-                    {
-                      name: "Responsive Design",
-                      icon: "📱",
-                      color: "from-indigo-500 to-purple-500",
-                      description: "Mobile-First",
-                    },
-                    {
-                      name: "SEO Optimization",
-                      icon: "🔍",
-                      color: "from-emerald-500 to-green-500",
-                      description: "Search Engine Optimization",
-                    },
-                    {
-                      name: "CMS Integration",
-                      icon: "📝",
-                      color: "from-cyan-500 to-blue-500",
-                      description: "Content Management",
-                    },
-                  ])
-                  .map((tech, index) => (
-                    <motion.div
-                      key={`${tech.name}-${index}`}
-                      className="flex-shrink-0"
-                      whileHover={{ scale: 1.1, y: -5 }}
-                      transition={{ type: "spring", stiffness: 300 }}
-                    >
-                      <Card
-                        className={`bg-gradient-to-br ${tech.color}/20 border-2 border-transparent hover:border-emerald-500/30 transition-all duration-300 group w-44 sm:w-48 h-28 sm:h-32`}
-                      >
-                        <CardContent className="p-3 sm:p-4 h-full flex flex-col justify-center items-center text-center relative overflow-hidden">
-                          <motion.div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-
-                          <motion.div
-                            className="text-2xl sm:text-3xl mb-2"
-                            animate={{
-                              rotate: tech.name === "React JS" ? [0, 360] : 0,
-                              scale: [1, 1.1, 1],
-                            }}
-                            transition={{
-                              rotate: { duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "linear" },
-                              scale: { duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
-                            }}
-                          >
-                            {tech.icon}
-                          </motion.div>
-
-                          <h4
-                            className={`font-bold text-xs sm:text-sm mb-1 bg-gradient-to-r ${tech.color} bg-clip-text text-transparent`}
-                          >
-                            {tech.name}
-                          </h4>
-
-                          <p className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors">
-                            {tech.description}
-                          </p>
-                        </CardContent>
-                      </Card>
-                    </motion.div>
-                  ))}
-              </motion.div>
-            </div>
-          </div>
-
-          {/* Achievement Stats - Updated */}
+        {/* Fixed Infinite Carousel - TRUE EDGE-TO-EDGE */}
+        <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] overflow-hidden">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6"
+            className="flex space-x-6 items-center"
+            animate={{
+              x: [0, -100 * 6], // Move by 6 items width
+            }}
+            transition={{
+              x: {
+                repeat: Number.POSITIVE_INFINITY,
+                repeatType: "loop",
+                duration: 20,
+                ease: "linear",
+              },
+            }}
+            style={{ width: "max-content" }}
           >
-            {[
-              { value: "70%", label: "Bundle Size Reduction", icon: "📦", color: "emerald" },
-              { value: "30%", label: "Search Performance Boost", icon: "🔍", color: "blue" },
-              { value: "40%", label: "Revenue Increase", icon: "📈", color: "green" },
-              { value: "3+", label: "Years Experience", icon: "⏱️", color: "purple" },
-            ].map((stat, index) => (
+            {/* Create seamless loop by tripling the array */}
+            {[...technologies, ...technologies, ...technologies].map((tech, index) => (
               <motion.div
-                key={stat.label}
-                whileHover={{ scale: 1.05, y: -5 }}
+                key={`${tech.name}-${index}`}
+                className="flex-shrink-0"
+                whileHover={{ scale: 1.1, y: -5 }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className={`text-center p-4 sm:p-6 bg-gradient-to-br from-${stat.color}-500/20 to-${stat.color}-600/20 rounded-lg border border-${stat.color}-500/30 hover:border-${stat.color}-400/50 transition-all duration-300`}
               >
-                <motion.div
-                  className="text-2xl sm:text-3xl mb-2"
-                  animate={{ scale: [1, 1.2, 1] }}
-                  transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, delay: index * 0.5 }}
+                <Card
+                  className={`bg-gradient-to-br ${tech.color}/20 border-2 border-transparent hover:border-emerald-500/30 transition-all duration-300 group w-44 sm:w-48 h-28 sm:h-32`}
                 >
-                  {stat.icon}
-                </motion.div>
-                <motion.div
-                  className={`text-2xl sm:text-3xl font-bold text-${stat.color}-400 mb-1`}
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  transition={{ delay: index * 0.1, type: "spring" }}
-                  viewport={{ once: true }}
-                >
-                  {stat.value}
-                </motion.div>
-                <div className="text-xs sm:text-sm text-gray-300">{stat.label}</div>
+                  <CardContent className="p-3 sm:p-4 h-full flex flex-col justify-center items-center text-center relative overflow-hidden">
+                    <motion.div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+
+                    <motion.div
+                      className="text-2xl sm:text-3xl mb-2"
+                      animate={{
+                        rotate: tech.name === "React JS" ? [0, 360] : 0,
+                        scale: [1, 1.1, 1],
+                      }}
+                      transition={{
+                        rotate: { duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "linear" },
+                        scale: { duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
+                      }}
+                    >
+                      {tech.icon}
+                    </motion.div>
+
+                    <h4
+                      className={`font-bold text-xs sm:text-sm mb-1 bg-gradient-to-r ${tech.color} bg-clip-text text-transparent`}
+                    >
+                      {tech.name}
+                    </h4>
+
+                    <p className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors">
+                      {tech.description}
+                    </p>
+                  </CardContent>
+                </Card>
               </motion.div>
             ))}
           </motion.div>
-
-          {/* Floating Elements */}
-          <motion.div
-            className="absolute top-20 left-10 text-4xl opacity-20"
-            animate={floatingAnimation}
-            transition={{ ...floatingAnimation.transition, delay: 0 }}
-          >
-            💻
-          </motion.div>
-          <motion.div
-            className="absolute bottom-20 right-10 text-3xl opacity-20"
-            animate={floatingAnimation}
-            transition={{ ...floatingAnimation.transition, delay: 1.5 }}
-          >
-            🚀
-          </motion.div>
-          <motion.div
-            className="absolute top-1/2 right-5 text-2xl opacity-20"
-            animate={floatingAnimation}
-            transition={{ ...floatingAnimation.transition, delay: 3 }}
-          >
-            ⚡
-          </motion.div>
         </div>
+
+        {/* Achievement Stats - Updated */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6"
+        >
+          {[
+            { value: "70%", label: "Bundle Size Reduction", icon: "📦", color: "emerald" },
+            { value: "30%", label: "Search Performance Boost", icon: "🔍", color: "blue" },
+            { value: "40%", label: "Revenue Impact", icon: "📈", color: "green" },
+            { value: "3+", label: "Years Experience", icon: "⏱️", color: "purple" },
+          ].map((stat, index) => (
+            <motion.div
+              key={stat.label}
+              whileHover={{ scale: 1.05, y: -5 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className={`text-center p-4 sm:p-6 bg-gradient-to-br from-${stat.color}-500/20 to-${stat.color}-600/20 rounded-lg border border-${stat.color}-500/30 hover:border-${stat.color}-400/50 transition-all duration-300`}
+            >
+              <motion.div
+                className="text-2xl sm:text-3xl mb-2"
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, delay: index * 0.5 }}
+              >
+                {stat.icon}
+              </motion.div>
+              <motion.div
+                className={`text-2xl sm:text-3xl font-bold text-${stat.color}-400 mb-1`}
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                transition={{ delay: index * 0.1, type: "spring" }}
+                viewport={{ once: true }}
+              >
+                {stat.value}
+              </motion.div>
+              <div className="text-xs sm:text-sm text-gray-300">{stat.label}</div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Floating Elements */}
+        <motion.div
+          className="absolute top-20 left-10 text-4xl opacity-20"
+          animate={floatingAnimation}
+          transition={{ ...floatingAnimation.transition, delay: 0 }}
+        >
+          💻
+        </motion.div>
+        <motion.div
+          className="absolute bottom-20 right-10 text-3xl opacity-20"
+          animate={floatingAnimation}
+          transition={{ ...floatingAnimation.transition, delay: 1.5 }}
+        >
+          🚀
+        </motion.div>
+        <motion.div
+          className="absolute top-1/2 right-5 text-2xl opacity-20"
+          animate={floatingAnimation}
+          transition={{ ...floatingAnimation.transition, delay: 3 }}
+        >
+          ⚡
+        </motion.div>
       </section>
 
       {/* Enhanced Experience Section */}
