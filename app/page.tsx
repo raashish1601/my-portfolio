@@ -585,7 +585,7 @@ export default function Portfolio() {
                       >
                         <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/20 to-red-500/20 rounded-lg blur-xl group-hover:blur-2xl transition-all duration-300" />
                         <img
-                          src="/images/action-hero-certificate.png"
+                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-s0BR1bhcpbWx3lVwkYToLdXRaomLSA.png"
                           alt="Action Hero Award Certificate"
                           className="w-full rounded-lg shadow-2xl relative z-10 border-2 border-yellow-500/30"
                         />
@@ -605,7 +605,7 @@ export default function Portfolio() {
                       >
                         <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-yellow-500/20 rounded-lg blur-xl group-hover:blur-2xl transition-all duration-300" />
                         <img
-                          src="/images/award-ceremony.png"
+                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-0RluWLPNVNA2tJvwdsQHcu0evFtSv7.png"
                           alt="Award Ceremony at CARS24"
                           className="w-full rounded-lg shadow-2xl relative z-10 border-2 border-orange-500/30"
                         />
@@ -1091,7 +1091,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Technologies & Skills Carousel - NEW INFINITE CAROUSEL */}
+      {/* Technologies & Skills Carousel - FIXED INFINITE CAROUSEL */}
       <section className="py-12 sm:py-20 relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6">
           <motion.div
@@ -1121,183 +1121,272 @@ export default function Portfolio() {
             </p>
           </motion.div>
 
-          {/* Technologies Carousel */}
-          <div className="relative overflow-hidden">
-            <motion.div
-              className="flex space-x-8 items-center"
-              animate={{
-                x: [0, -100 * 12],
-              }}
-              transition={{
-                x: {
-                  repeat: Number.POSITIVE_INFINITY,
-                  repeatType: "loop",
-                  duration: 30,
-                  ease: "linear",
-                },
-              }}
-              style={{ width: "200%" }}
-            >
-              {[
-                { name: "React JS", icon: "⚛️", color: "from-blue-400 to-cyan-400", description: "Component Library" },
-                { name: "Next.js", icon: "▲", color: "from-gray-600 to-gray-800", description: "Full-Stack Framework" },
-                { name: "TypeScript", icon: "TS", color: "from-blue-600 to-blue-800", description: "Type Safety" },
-                {
-                  name: "JavaScript",
-                  icon: "JS",
-                  color: "from-yellow-400 to-yellow-600",
-                  description: "Core Language",
-                },
-                {
-                  name: "Redux/RTK",
-                  icon: "🔄",
-                  color: "from-purple-500 to-purple-700",
-                  description: "State Management",
-                },
-                {
-                  name: "Tailwind CSS",
-                  icon: "🎨",
-                  color: "from-teal-400 to-teal-600",
-                  description: "Utility-First CSS",
-                },
-                {
-                  name: "React Storybook",
-                  icon: "📚",
-                  color: "from-pink-500 to-pink-700",
-                  description: "Component Documentation",
-                },
-                {
-                  name: "Performance Optimization",
-                  icon: "⚡",
-                  color: "from-green-500 to-green-700",
-                  description: "Web Vitals & Speed",
-                },
-                {
-                  name: "Git & GitHub",
-                  icon: "🔧",
-                  color: "from-orange-500 to-red-500",
-                  description: "Version Control",
-                },
-                {
-                  name: "Responsive Design",
-                  icon: "📱",
-                  color: "from-indigo-500 to-purple-500",
-                  description: "Mobile-First",
-                },
-                {
-                  name: "SEO Optimization",
-                  icon: "🔍",
-                  color: "from-emerald-500 to-green-500",
-                  description: "Search Engine Optimization",
-                },
-                {
-                  name: "CMS Integration",
-                  icon: "📝",
-                  color: "from-cyan-500 to-blue-500",
-                  description: "Content Management",
-                },
-                // Duplicate for seamless loop
-                { name: "React JS", icon: "⚛️", color: "from-blue-400 to-cyan-400", description: "Component Library" },
-                { name: "Next.js", icon: "▲", color: "from-gray-600 to-gray-800", description: "Full-Stack Framework" },
-                { name: "TypeScript", icon: "TS", color: "from-blue-600 to-blue-800", description: "Type Safety" },
-                {
-                  name: "JavaScript",
-                  icon: "JS",
-                  color: "from-yellow-400 to-yellow-600",
-                  description: "Core Language",
-                },
-                {
-                  name: "Redux/RTK",
-                  icon: "🔄",
-                  color: "from-purple-500 to-purple-700",
-                  description: "State Management",
-                },
-                {
-                  name: "Tailwind CSS",
-                  icon: "🎨",
-                  color: "from-teal-400 to-teal-600",
-                  description: "Utility-First CSS",
-                },
-                {
-                  name: "React Storybook",
-                  icon: "📚",
-                  color: "from-pink-500 to-pink-700",
-                  description: "Component Documentation",
-                },
-                {
-                  name: "Performance Optimization",
-                  icon: "⚡",
-                  color: "from-green-500 to-green-700",
-                  description: "Web Vitals & Speed",
-                },
-                {
-                  name: "Git & GitHub",
-                  icon: "🔧",
-                  color: "from-orange-500 to-red-500",
-                  description: "Version Control",
-                },
-                {
-                  name: "Responsive Design",
-                  icon: "📱",
-                  color: "from-indigo-500 to-purple-500",
-                  description: "Mobile-First",
-                },
-                {
-                  name: "SEO Optimization",
-                  icon: "🔍",
-                  color: "from-emerald-500 to-green-500",
-                  description: "Search Engine Optimization",
-                },
-                {
-                  name: "CMS Integration",
-                  icon: "📝",
-                  color: "from-cyan-500 to-blue-500",
-                  description: "Content Management",
-                },
-              ].map((tech, index) => (
-                <motion.div
-                  key={`${tech.name}-${index}`}
-                  className="flex-shrink-0"
-                  whileHover={{ scale: 1.1, y: -5 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <Card
-                    className={`bg-gradient-to-br ${tech.color}/20 border-2 border-transparent hover:border-emerald-500/30 transition-all duration-300 group w-48 h-32`}
-                  >
-                    <CardContent className="p-4 h-full flex flex-col justify-center items-center text-center relative overflow-hidden">
-                      <motion.div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-
-                      <motion.div
-                        className="text-3xl mb-2"
-                        animate={{
-                          rotate: tech.name === "React JS" ? [0, 360] : 0,
-                          scale: [1, 1.1, 1],
-                        }}
-                        transition={{
-                          rotate: { duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "linear" },
-                          scale: { duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
-                        }}
+          {/* Fixed Infinite Carousel - Full Width */}
+          <div className="w-full overflow-hidden -mx-4 sm:-mx-6">
+            <div className="relative">
+              <motion.div
+                className="flex space-x-6 items-center"
+                animate={{
+                  x: [0, -100 * 6], // Move by 6 items width
+                }}
+                transition={{
+                  x: {
+                    repeat: Number.POSITIVE_INFINITY,
+                    repeatType: "loop",
+                    duration: 20,
+                    ease: "linear",
+                  },
+                }}
+                style={{ width: "max-content" }}
+              >
+                {/* Create seamless loop by tripling the array */}
+                {[
+                  { name: "React JS", icon: "⚛️", color: "from-blue-400 to-cyan-400", description: "Component Library" },
+                  {
+                    name: "Next.js",
+                    icon: "▲",
+                    color: "from-gray-600 to-gray-800",
+                    description: "Full-Stack Framework",
+                  },
+                  { name: "TypeScript", icon: "TS", color: "from-blue-600 to-blue-800", description: "Type Safety" },
+                  {
+                    name: "JavaScript",
+                    icon: "JS",
+                    color: "from-yellow-400 to-yellow-600",
+                    description: "Core Language",
+                  },
+                  {
+                    name: "Redux/RTK",
+                    icon: "🔄",
+                    color: "from-purple-500 to-purple-700",
+                    description: "State Management",
+                  },
+                  {
+                    name: "Tailwind CSS",
+                    icon: "🎨",
+                    color: "from-teal-400 to-teal-600",
+                    description: "Utility-First CSS",
+                  },
+                  {
+                    name: "React Storybook",
+                    icon: "📚",
+                    color: "from-pink-500 to-pink-700",
+                    description: "Component Documentation",
+                  },
+                  {
+                    name: "Performance Optimization",
+                    icon: "⚡",
+                    color: "from-green-500 to-green-700",
+                    description: "Web Vitals & Speed",
+                  },
+                  {
+                    name: "Git & GitHub",
+                    icon: "🔧",
+                    color: "from-orange-500 to-red-500",
+                    description: "Version Control",
+                  },
+                  {
+                    name: "Responsive Design",
+                    icon: "📱",
+                    color: "from-indigo-500 to-purple-500",
+                    description: "Mobile-First",
+                  },
+                  {
+                    name: "SEO Optimization",
+                    icon: "🔍",
+                    color: "from-emerald-500 to-green-500",
+                    description: "Search Engine Optimization",
+                  },
+                  {
+                    name: "CMS Integration",
+                    icon: "📝",
+                    color: "from-cyan-500 to-blue-500",
+                    description: "Content Management",
+                  },
+                ]
+                  .concat([
+                    {
+                      name: "React JS",
+                      icon: "⚛️",
+                      color: "from-blue-400 to-cyan-400",
+                      description: "Component Library",
+                    },
+                    {
+                      name: "Next.js",
+                      icon: "▲",
+                      color: "from-gray-600 to-gray-800",
+                      description: "Full-Stack Framework",
+                    },
+                    { name: "TypeScript", icon: "TS", color: "from-blue-600 to-blue-800", description: "Type Safety" },
+                    {
+                      name: "JavaScript",
+                      icon: "JS",
+                      color: "from-yellow-400 to-yellow-600",
+                      description: "Core Language",
+                    },
+                    {
+                      name: "Redux/RTK",
+                      icon: "🔄",
+                      color: "from-purple-500 to-purple-700",
+                      description: "State Management",
+                    },
+                    {
+                      name: "Tailwind CSS",
+                      icon: "🎨",
+                      color: "from-teal-400 to-teal-600",
+                      description: "Utility-First CSS",
+                    },
+                    {
+                      name: "React Storybook",
+                      icon: "📚",
+                      color: "from-pink-500 to-pink-700",
+                      description: "Component Documentation",
+                    },
+                    {
+                      name: "Performance Optimization",
+                      icon: "⚡",
+                      color: "from-green-500 to-green-700",
+                      description: "Web Vitals & Speed",
+                    },
+                    {
+                      name: "Git & GitHub",
+                      icon: "🔧",
+                      color: "from-orange-500 to-red-500",
+                      description: "Version Control",
+                    },
+                    {
+                      name: "Responsive Design",
+                      icon: "📱",
+                      color: "from-indigo-500 to-purple-500",
+                      description: "Mobile-First",
+                    },
+                    {
+                      name: "SEO Optimization",
+                      icon: "🔍",
+                      color: "from-emerald-500 to-green-500",
+                      description: "Search Engine Optimization",
+                    },
+                    {
+                      name: "CMS Integration",
+                      icon: "📝",
+                      color: "from-cyan-500 to-blue-500",
+                      description: "Content Management",
+                    },
+                  ])
+                  .concat([
+                    {
+                      name: "React JS",
+                      icon: "⚛️",
+                      color: "from-blue-400 to-cyan-400",
+                      description: "Component Library",
+                    },
+                    {
+                      name: "Next.js",
+                      icon: "▲",
+                      color: "from-gray-600 to-gray-800",
+                      description: "Full-Stack Framework",
+                    },
+                    { name: "TypeScript", icon: "TS", color: "from-blue-600 to-blue-800", description: "Type Safety" },
+                    {
+                      name: "JavaScript",
+                      icon: "JS",
+                      color: "from-yellow-400 to-yellow-600",
+                      description: "Core Language",
+                    },
+                    {
+                      name: "Redux/RTK",
+                      icon: "🔄",
+                      color: "from-purple-500 to-purple-700",
+                      description: "State Management",
+                    },
+                    {
+                      name: "Tailwind CSS",
+                      icon: "🎨",
+                      color: "from-teal-400 to-teal-600",
+                      description: "Utility-First CSS",
+                    },
+                    {
+                      name: "React Storybook",
+                      icon: "📚",
+                      color: "from-pink-500 to-pink-700",
+                      description: "Component Documentation",
+                    },
+                    {
+                      name: "Performance Optimization",
+                      icon: "⚡",
+                      color: "from-green-500 to-green-700",
+                      description: "Web Vitals & Speed",
+                    },
+                    {
+                      name: "Git & GitHub",
+                      icon: "🔧",
+                      color: "from-orange-500 to-red-500",
+                      description: "Version Control",
+                    },
+                    {
+                      name: "Responsive Design",
+                      icon: "📱",
+                      color: "from-indigo-500 to-purple-500",
+                      description: "Mobile-First",
+                    },
+                    {
+                      name: "SEO Optimization",
+                      icon: "🔍",
+                      color: "from-emerald-500 to-green-500",
+                      description: "Search Engine Optimization",
+                    },
+                    {
+                      name: "CMS Integration",
+                      icon: "📝",
+                      color: "from-cyan-500 to-blue-500",
+                      description: "Content Management",
+                    },
+                  ])
+                  .map((tech, index) => (
+                    <motion.div
+                      key={`${tech.name}-${index}`}
+                      className="flex-shrink-0"
+                      whileHover={{ scale: 1.1, y: -5 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
+                      <Card
+                        className={`bg-gradient-to-br ${tech.color}/20 border-2 border-transparent hover:border-emerald-500/30 transition-all duration-300 group w-44 sm:w-48 h-28 sm:h-32`}
                       >
-                        {tech.icon}
-                      </motion.div>
+                        <CardContent className="p-3 sm:p-4 h-full flex flex-col justify-center items-center text-center relative overflow-hidden">
+                          <motion.div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
 
-                      <h4
-                        className={`font-bold text-sm mb-1 bg-gradient-to-r ${tech.color} bg-clip-text text-transparent`}
-                      >
-                        {tech.name}
-                      </h4>
+                          <motion.div
+                            className="text-2xl sm:text-3xl mb-2"
+                            animate={{
+                              rotate: tech.name === "React JS" ? [0, 360] : 0,
+                              scale: [1, 1.1, 1],
+                            }}
+                            transition={{
+                              rotate: { duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "linear" },
+                              scale: { duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
+                            }}
+                          >
+                            {tech.icon}
+                          </motion.div>
 
-                      <p className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors">
-                        {tech.description}
-                      </p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </motion.div>
+                          <h4
+                            className={`font-bold text-xs sm:text-sm mb-1 bg-gradient-to-r ${tech.color} bg-clip-text text-transparent`}
+                          >
+                            {tech.name}
+                          </h4>
+
+                          <p className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors">
+                            {tech.description}
+                          </p>
+                        </CardContent>
+                      </Card>
+                    </motion.div>
+                  ))}
+              </motion.div>
+            </div>
           </div>
 
-          {/* Achievement Stats */}
+          {/* Achievement Stats - Updated */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -1309,7 +1398,7 @@ export default function Portfolio() {
               { value: "70%", label: "Bundle Size Reduction", icon: "📦", color: "emerald" },
               { value: "30%", label: "Search Performance Boost", icon: "🔍", color: "blue" },
               { value: "40%", label: "Revenue Increase", icon: "📈", color: "green" },
-              { value: "50K+", label: "Users Reached", icon: "👥", color: "purple" },
+              { value: "3+", label: "Years Experience", icon: "⏱️", color: "purple" },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -1604,7 +1693,7 @@ export default function Portfolio() {
                           { value: "3+", label: "Years Experience", color: "cyan" },
                           { value: "5+", label: "Major Projects", color: "purple" },
                           { value: "70%", label: "Performance Boost", color: "green" },
-                          { value: "50K+", label: "Users Impacted", color: "yellow" },
+                          { value: "40%", label: "Revenue Impact", color: "yellow" },
                         ].map((stat, index) => (
                           <motion.div
                             key={stat.label}
