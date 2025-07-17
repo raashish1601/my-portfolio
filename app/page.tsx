@@ -166,6 +166,7 @@ export default function Portfolio() {
       company: "CARS24",
       period: "August 2024 - Present",
       location: "Gurgaon",
+      logo: "/placeholder.svg?height=40&width=120",
       highlights: [
         "Integrated ReactJS-based lead generation form contributing to 30-40% MoM revenue increase",
         "Developed Search Flow, Compare Bikes Flow, and advanced filtering systems",
@@ -178,6 +179,7 @@ export default function Portfolio() {
       company: "GeeksforGeeks",
       period: "January 2023 - July 2024",
       location: "Noida",
+      logo: "/placeholder.svg?height=40&width=120",
       highlights: [
         "Architected entire UI structure for GFG's home page and search functionality",
         "Optimized search with DFS algorithm achieving 30% improvement",
@@ -190,6 +192,7 @@ export default function Portfolio() {
       company: "Nagarro",
       period: "July 2022 - December 2022",
       location: "Delhi",
+      logo: "/placeholder.svg?height=40&width=120",
       highlights: [
         "Performed development, debugging, and optimization",
         "Reduced LCP and FCP to increase page speed",
@@ -378,8 +381,9 @@ export default function Portfolio() {
         initial={{ x: -100 }}
         animate={{ x: 0 }}
         transition={{ delay: 1 }}
-        className="fixed left-4 lg:left-6 top-1/2 transform -translate-y-1/2 z-40 hidden lg:flex flex-col space-y-4"
+        className="fixed left-4 lg:left-6 top-1/2 transform -translate-y-1/2 z-40 hidden lg:flex flex-col items-center space-y-4"
       >
+        <div className="w-0.5 h-16 bg-gradient-to-b from-transparent to-emerald-500"></div>
         <motion.a
           href="https://linkedin.com/in/raashish-aggarwal"
           target="_blank"
@@ -407,7 +411,7 @@ export default function Portfolio() {
         >
           <GraduationCap className="w-5 h-5 text-white" />
         </motion.a>
-        <div className="w-0.5 h-16 bg-gradient-to-b from-emerald-500 to-transparent mx-auto"></div>
+        <div className="w-0.5 h-16 bg-gradient-to-b from-emerald-500 to-transparent"></div>
       </motion.div>
 
       {/* Enhanced Hero Section */}
@@ -809,19 +813,19 @@ export default function Portfolio() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <motion.div className="flex items-center" whileHover={{ x: 5 }}>
                         <MapPin className="w-4 sm:w-5 h-4 sm:h-5 text-emerald-400 mr-2 flex-shrink-0" />
-                        <span className="text-sm sm:text-base text-white">Gurgaon, India</span>
+                        <span className="text-sm sm:text-base text-gray-300">Gurgaon, India</span>
                       </motion.div>
                       <motion.div className="flex items-center" whileHover={{ x: 5 }}>
                         <Phone className="w-4 sm:w-5 h-4 sm:h-5 text-emerald-400 mr-2 flex-shrink-0" />
-                        <span className="text-sm sm:text-base text-white">+91-8800555656</span>
+                        <span className="text-sm sm:text-base text-gray-300">+91-8800555656</span>
                       </motion.div>
                       <motion.div className="flex items-center" whileHover={{ x: 5 }}>
                         <Mail className="w-4 sm:w-5 h-4 sm:h-5 text-emerald-400 mr-2 flex-shrink-0" />
-                        <span className="text-sm sm:text-base text-white">raashish1601@gmail.com</span>
+                        <span className="text-sm sm:text-base text-gray-300">raashish1601@gmail.com</span>
                       </motion.div>
                       <motion.div className="flex items-center" whileHover={{ x: 5 }}>
                         <GraduationCap className="w-4 sm:w-5 h-4 sm:h-5 text-emerald-400 mr-2 flex-shrink-0" />
-                        <span className="text-sm sm:text-base text-white">B.Tech IT (8.22 CGPA)</span>
+                        <span className="text-sm sm:text-base text-gray-300">B.Tech IT (8.22 CGPA)</span>
                       </motion.div>
                     </div>
                   </CardContent>
@@ -1178,7 +1182,7 @@ export default function Portfolio() {
               <motion.div
                 key={`${tech.name}-${index}`}
                 className="flex-shrink-0"
-                whileHover={{ scale: 1.1, y: -5 }}
+                whileHover={{ scale: 1.05, y: -2 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <Card
@@ -1218,45 +1222,47 @@ export default function Portfolio() {
         </div>
 
         {/* Achievement Stats - Updated */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6"
-        >
-          {[
-            { value: "70%", label: "Bundle Size Reduction", icon: "📦", color: "emerald" },
-            { value: "30%", label: "Search Performance Boost", icon: "🔍", color: "blue" },
-            { value: "40%", label: "Revenue Impact", icon: "📈", color: "green" },
-            { value: "3+", label: "Years Experience", icon: "⏱️", color: "purple" },
-          ].map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              whileHover={{ scale: 1.05, y: -5 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className={`text-center p-4 sm:p-6 bg-gradient-to-br from-${stat.color}-500/20 to-${stat.color}-600/20 rounded-lg border border-${stat.color}-500/30 hover:border-${stat.color}-400/50 transition-all duration-300`}
-            >
+        <div className="container mx-auto px-4 sm:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6"
+          >
+            {[
+              { value: "70%", label: "Bundle Size Reduction", icon: "📦", color: "emerald" },
+              { value: "30%", label: "Search Performance Boost", icon: "🔍", color: "blue" },
+              { value: "40%", label: "Revenue Impact", icon: "📈", color: "green" },
+              { value: "3+", label: "Years Experience", icon: "⏱️", color: "purple" },
+            ].map((stat, index) => (
               <motion.div
-                className="text-2xl sm:text-3xl mb-2"
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, delay: index * 0.5 }}
+                key={stat.label}
+                whileHover={{ scale: 1.05, y: -5 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className={`text-center p-4 sm:p-6 bg-gradient-to-br from-${stat.color}-500/20 to-${stat.color}-600/20 rounded-lg border border-${stat.color}-500/30 hover:border-${stat.color}-400/50 transition-all duration-300`}
               >
-                {stat.icon}
+                <motion.div
+                  className="text-2xl sm:text-3xl mb-2"
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, delay: index * 0.5 }}
+                >
+                  {stat.icon}
+                </motion.div>
+                <motion.div
+                  className={`text-2xl sm:text-3xl font-bold text-${stat.color}-400 mb-1`}
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  transition={{ delay: index * 0.1, type: "spring" }}
+                  viewport={{ once: true }}
+                >
+                  {stat.value}
+                </motion.div>
+                <div className="text-xs sm:text-sm text-gray-300">{stat.label}</div>
               </motion.div>
-              <motion.div
-                className={`text-2xl sm:text-3xl font-bold text-${stat.color}-400 mb-1`}
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                transition={{ delay: index * 0.1, type: "spring" }}
-                viewport={{ once: true }}
-              >
-                {stat.value}
-              </motion.div>
-              <div className="text-xs sm:text-sm text-gray-300">{stat.label}</div>
-            </motion.div>
-          ))}
-        </motion.div>
+            ))}
+          </motion.div>
+        </div>
 
         {/* Floating Elements */}
         <motion.div
@@ -1347,14 +1353,21 @@ export default function Portfolio() {
                     <Card className="bg-white/5 backdrop-blur-md border-white/10 hover:border-emerald-500/30 transition-all duration-300">
                       <CardContent className="p-4 sm:p-6">
                         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                          <div>
-                            <motion.h3
-                              className="text-lg sm:text-xl font-bold text-white mb-1"
-                              whileHover={{ color: "#22d3ee" }}
-                            >
-                              {exp.title}
-                            </motion.h3>
-                            <p className="text-cyan-400 font-semibold text-sm sm:text-base">{exp.company}</p>
+                          <div className="flex items-center gap-4">
+                            <img
+                              src={exp.logo || "/placeholder.svg"}
+                              alt={`${exp.company} logo`}
+                              className="w-8 h-8 sm:w-10 sm:h-10 object-contain rounded"
+                            />
+                            <div>
+                              <motion.h3
+                                className="text-lg sm:text-xl font-bold text-white mb-1"
+                                whileHover={{ color: "#22d3ee" }}
+                              >
+                                {exp.title}
+                              </motion.h3>
+                              <p className="text-cyan-400 font-semibold text-sm sm:text-base">{exp.company}</p>
+                            </div>
                           </div>
                           <div className="text-left md:text-right mt-2 md:mt-0">
                             <p className="text-gray-300 font-medium text-sm sm:text-base">{exp.period}</p>
@@ -1563,7 +1576,7 @@ export default function Portfolio() {
       >
         <div className="container mx-auto px-4 sm:px-6 text-center">
           <motion.p className="text-gray-400 text-sm sm:text-base" whileHover={{ scale: 1.05 }}>
-            © 2024 Raashish Aggarwal. Crafted with passion and modern web technologies.
+            © 2025 Raashish Aggarwal. Crafted with passion and modern web technologies.
           </motion.p>
         </div>
       </motion.footer>
