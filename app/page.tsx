@@ -166,7 +166,7 @@ export default function Portfolio() {
       company: "CARS24",
       period: "August 2024 - Present",
       location: "Gurgaon",
-      logo: "/placeholder.svg?height=40&width=120",
+      logo: "/logos/cars24-logo.png",
       highlights: [
         "Integrated ReactJS-based lead generation form contributing to 30-40% MoM revenue increase",
         "Developed Search Flow, Compare Bikes Flow, and advanced filtering systems",
@@ -179,7 +179,7 @@ export default function Portfolio() {
       company: "GeeksforGeeks",
       period: "January 2023 - July 2024",
       location: "Noida",
-      logo: "/placeholder.svg?height=40&width=120",
+      logo: "/logos/geeksforgeeks-logo.png",
       highlights: [
         "Architected entire UI structure for GFG's home page and search functionality",
         "Optimized search with DFS algorithm achieving 30% improvement",
@@ -192,7 +192,7 @@ export default function Portfolio() {
       company: "Nagarro",
       period: "July 2022 - December 2022",
       location: "Delhi",
-      logo: "/placeholder.svg?height=40&width=120",
+      logo: "/logos/nagarro-logo.png",
       highlights: [
         "Performed development, debugging, and optimization",
         "Reduced LCP and FCP to increase page speed",
@@ -846,7 +846,7 @@ export default function Portfolio() {
                     <CardContent className="p-0">
                       <Zap className="w-6 sm:w-8 h-6 sm:h-8 text-emerald-400 mx-auto mb-2" />
                       <div className="text-lg sm:text-2xl font-bold text-emerald-400 mb-1">Problem Solver</div>
-                      <div className="text-xs text-gray-300">Creative Solutions</div>
+                      <div className="text-xs text-gray-200">Creative Solutions</div>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -855,7 +855,7 @@ export default function Portfolio() {
                     <CardContent className="p-0">
                       <Target className="w-6 sm:w-8 h-6 sm:h-8 text-purple-400 mx-auto mb-2" />
                       <div className="text-lg sm:text-2xl font-bold text-purple-400 mb-1">Goal Oriented</div>
-                      <div className="text-xs text-gray-300">Results Driven</div>
+                      <div className="text-xs text-gray-200">Results Driven</div>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -864,7 +864,7 @@ export default function Portfolio() {
                     <CardContent className="p-0">
                       <Users className="w-6 sm:w-8 h-6 sm:h-8 text-green-400 mx-auto mb-2" />
                       <div className="text-lg sm:text-2xl font-bold text-green-400 mb-1">Team Player</div>
-                      <div className="text-xs text-gray-300">Collaborative</div>
+                      <div className="text-xs text-gray-200">Collaborative</div>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -873,7 +873,7 @@ export default function Portfolio() {
                     <CardContent className="p-0">
                       <TrendingUp className="w-6 sm:w-8 h-6 sm:h-8 text-yellow-400 mx-auto mb-2" />
                       <div className="text-lg sm:text-2xl font-bold text-yellow-400 mb-1">Growth Mindset</div>
-                      <div className="text-xs text-gray-300">Always Learning</div>
+                      <div className="text-xs text-gray-200">Always Learning</div>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -1002,7 +1002,7 @@ export default function Portfolio() {
                       <item.icon className="w-10 sm:w-12 h-10 sm:h-12 text-white mx-auto mb-4" />
                     </motion.div>
                     <h3 className="text-lg sm:text-xl font-bold mb-2 text-white">{item.title}</h3>
-                    <p className="text-gray-300 text-xs sm:text-sm">{item.desc}</p>
+                    <p className="text-gray-200 text-xs sm:text-sm">{item.desc}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -1160,8 +1160,8 @@ export default function Portfolio() {
           </motion.div>
         </div>
 
-        {/* Fixed Infinite Carousel - TRUE EDGE-TO-EDGE */}
-        <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] overflow-hidden">
+        {/* Fixed Infinite Carousel - TRUE EDGE-TO-EDGE with padding for hover */}
+        <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] overflow-hidden py-4">
           <motion.div
             className="flex space-x-6 items-center"
             animate={{
@@ -1182,7 +1182,7 @@ export default function Portfolio() {
               <motion.div
                 key={`${tech.name}-${index}`}
                 className="flex-shrink-0"
-                whileHover={{ scale: 1.05, y: -2 }}
+                whileHover={{ scale: 1.02, y: -2 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <Card
