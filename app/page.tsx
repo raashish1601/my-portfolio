@@ -166,7 +166,7 @@ export default function Portfolio() {
       company: "CARS24",
       period: "August 2024 - Present",
       location: "Gurgaon",
-      logo: "/logos/cars24-logo.png",
+      logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-JEEN3Daq96FKo6ytIEfYTu8y5tLJkl.png",
       highlights: [
         "Integrated ReactJS-based lead generation form contributing to 30-40% MoM revenue increase",
         "Developed Search Flow, Compare Bikes Flow, and advanced filtering systems",
@@ -179,7 +179,7 @@ export default function Portfolio() {
       company: "GeeksforGeeks",
       period: "January 2023 - July 2024",
       location: "Noida",
-      logo: "/logos/geeksforgeeks-logo.png",
+      logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-klVAyC3CzJOeQnmpL8SpfEuo4MSk9g.png",
       highlights: [
         "Architected entire UI structure for GFG's home page and search functionality",
         "Optimized search with DFS algorithm achieving 30% improvement",
@@ -192,7 +192,7 @@ export default function Portfolio() {
       company: "Nagarro",
       period: "July 2022 - December 2022",
       location: "Delhi",
-      logo: "/logos/nagarro-logo.png",
+      logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-3WQantLpQLge1goL3uUbCfMVbqdpmw.png",
       highlights: [
         "Performed development, debugging, and optimization",
         "Reduced LCP and FCP to increase page speed",
