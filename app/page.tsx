@@ -113,7 +113,7 @@ export default function Portfolio() {
     { name: "JavaScript", level: 92, color: "from-yellow-400 to-yellow-600" },
     { name: "Redux/RTK", level: 85, color: "from-purple-500 to-purple-700" },
     { name: "Tailwind CSS", level: 90, color: "from-teal-400 to-teal-600" },
-    { name: "Performance Optimization", level: 88, color: "from-green-500 to-green-700" },
+    { name: "DSA", level: 88, color: "from-green-500 to-green-700" },
     { name: "React Storybook", level: 82, color: "from-pink-500 to-pink-700" },
   ]
 
