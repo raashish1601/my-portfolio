@@ -825,7 +825,7 @@ export default function Portfolio() {
                       </motion.div>
                       <motion.div className="flex items-center" whileHover={{ x: 5 }}>
                         <GraduationCap className="w-4 sm:w-5 h-4 sm:h-5 text-emerald-400 mr-2 flex-shrink-0" />
-                        <span className="text-sm sm:text-base text-gray-300">B.Tech IT (8.22 CGPA)</span>
+                        <span className="text-sm sm:text-base text-gray-300">B.Tech IT</span>
                       </motion.div>
                     </div>
                   </CardContent>
