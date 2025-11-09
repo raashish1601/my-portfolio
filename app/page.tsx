@@ -113,26 +113,50 @@ export default function Portfolio() {
     { name: "JavaScript", level: 92, color: "from-yellow-400 to-yellow-600" },
     { name: "Redux/RTK", level: 85, color: "from-purple-500 to-purple-700" },
     { name: "Tailwind CSS", level: 90, color: "from-teal-400 to-teal-600" },
-    { name: "DSA", level: 88, color: "from-green-500 to-green-700" },
-    { name: "React Storybook", level: 82, color: "from-pink-500 to-pink-700" },
+    { name: "Django & RAG", level: 80, color: "from-orange-500 to-orange-700" },
+    { name: "Performance Optimization", level: 92, color: "from-green-500 to-green-700" },
   ]
 
   const projects = [
     {
+      title: "CARS24 RAG-based Search Tool",
+      description:
+        "Built an internal RAG-based search tool using Django and embeddings to help New-Car teams quickly access product, pricing, and launch documents, reducing manual search time significantly.",
+      tech: ["Django", "RAG Pipelines", "Embeddings", "Python"],
+      link: "https://www.cars24.com/new-cars/",
+      achievements: ["70% manual search time reduction", "Improved team productivity", "RAG implementation"],
+    },
+    {
       title: "CARS24 - New Cars Platform",
       description:
-        "Led the development of the new cars platform with advanced search, compare, and filtering systems. Implemented widget-driven UI architecture controllable via CMS.",
-      tech: ["React JS", "TypeScript", "Redux", "Performance Optimization"],
+        "Led the development of the new cars platform with advanced search, compare, and filtering systems. Implemented widget-driven UI architecture controllable via CMS with A/B testing.",
+      tech: ["React JS", "TypeScript", "Redux", "Performance Optimization", "A/B Testing"],
       link: "https://www.cars24.com/new-cars/",
       achievements: ["70% bundle size reduction", "Improved Core Web Vitals", "Widget-driven architecture"],
     },
     {
-      title: "Bikes24 Platform",
+      title: "Bikes24 Platform & Lead Generation",
       description:
-        "Developed end-to-end features including Search Flow, Compare Bikes Flow, and advanced filtering systems with focus on intuitive user experiences.",
-      tech: ["React JS", "PHP Integration", "CMS", "Responsive Design"],
+        "Developed end-to-end features including Search Flow, Compare Bikes Flow, and micro-frontend integration. Integrated ReactJS lead generation form into PHP Team-BHP platform.",
+      tech: ["React JS", "PHP Integration", "Micro-frontends", "CMS", "Lead Generation"],
       link: "https://www.bikes24.com/",
       achievements: ["30-40% MoM revenue increase", "Lead generation integration", "Advanced filtering system"],
+    },
+    {
+      title: "CARS24 Global Header & Footer",
+      description:
+        "Integrated CARS24 global header and footer as a micro-frontend across New-Car pages for consistent UX and easier multi-team integration.",
+      tech: ["React JS", "Micro-frontends", "CSS", "Integration"],
+      link: "https://www.cars24.com/new-cars/",
+      achievements: ["Consistent UX across pages", "Multi-team integration", "Micro-frontend architecture"],
+    },
+    {
+      title: "Renault Lead-Form Automation",
+      description:
+        "Automated Renault lead-form workflow using Playwright, eliminating manual data entry and significantly speeding up sales operations.",
+      tech: ["Playwright", "Automation", "Testing", "Sales Operations"],
+      link: "https://www.cars24.com/new-cars/",
+      achievements: ["Manual data entry removed", "Faster sales operations", "Automation solution"],
     },
     {
       title: "GeeksforGeeks Community",
@@ -141,22 +165,6 @@ export default function Portfolio() {
       tech: ["React JS", "Search Optimization", "DFS Algorithm", "lexical-dev"],
       link: "https://www.geeksforgeeks.org/community/",
       achievements: ["30% search improvement", "50% user following increase", "Hashtag plugin development"],
-    },
-    {
-      title: "Team-BHP Integration",
-      description:
-        "Integrated ReactJS-based lead generation form into PHP-powered Team-BHP platform, enabling new user acquisition capabilities.",
-      tech: ["React JS", "PHP", "Lead Generation", "Integration"],
-      link: "https://www.team-bhp.com/forum/shifting-gears/292536-argentina-play-exhibition-match-october-2025-kochi-kerala.html",
-      achievements: ["Seamless React-PHP integration", "Lead generation system", "User acquisition boost"],
-    },
-    {
-      title: "GeeksforGeeks Main Platform",
-      description:
-        "Architected and designed the entire structure and UI for GFG's home page, college/companies pages, implementing SEO strategies and performance optimization.",
-      tech: ["React JS", "SEO Optimization", "Performance", "UI Architecture"],
-      link: "https://www.geeksforgeeks.org/",
-      achievements: ["Complete UI architecture", "SEO implementation", "Performance optimization"],
     },
   ]
 
@@ -168,10 +176,14 @@ export default function Portfolio() {
       location: "Gurgaon",
       logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-JEEN3Daq96FKo6ytIEfYTu8y5tLJkl.png",
       highlights: [
-        "Integrated ReactJS-based lead generation form contributing to 30-40% MoM revenue increase",
-        "Developed Search Flow, Compare Bikes Flow, and advanced filtering systems",
-        "Reduced bundle size by 70% and improved Core Web Vitals",
-        "Built reusable UI components using React Storybook",
+        "Built internal RAG-based search tool (Django + embeddings) reducing manual search time by 70%",
+        "Integrated ReactJS lead-generation form contributing to 30-40% MoM revenue increase",
+        "Integrated CARS24 global header & footer micro-frontend across New-Car pages",
+        "Delivered Search Flow, Compare Bikes Flow, Colors, Images, Videos Listing using widget-driven CMS",
+        "Ran A/B tests on UI variations to improve user engagement and click-through consistency",
+        "Reduced JS bundle size by 70% with code splitting, lazy loading, and dependency cleanup",
+        "Improved frontend security through input sanitization, safer API handling, and XSS prevention",
+        "Automated Renault lead-form workflow using Playwright for sales operations",
       ],
     },
     {
@@ -201,7 +213,6 @@ export default function Portfolio() {
     },
   ]
 
-  // Technologies data for carousel
   const technologies = [
     { name: "React JS", icon: "⚛️", color: "from-blue-400 to-cyan-400", description: "Component Library" },
     { name: "Next.js", icon: "▲", color: "from-gray-600 to-gray-800", description: "Full-Stack Framework" },
@@ -209,22 +220,12 @@ export default function Portfolio() {
     { name: "JavaScript", icon: "JS", color: "from-yellow-400 to-yellow-600", description: "Core Language" },
     { name: "Redux/RTK", icon: "🔄", color: "from-purple-500 to-purple-700", description: "State Management" },
     { name: "Tailwind CSS", icon: "🎨", color: "from-teal-400 to-teal-600", description: "Utility-First CSS" },
-    { name: "React Storybook", icon: "📚", color: "from-pink-500 to-pink-700", description: "Component Documentation" },
-    {
-      name: "Performance Optimization",
-      icon: "⚡",
-      color: "from-green-500 to-green-700",
-      description: "Web Vitals & Speed",
-    },
-    { name: "Git & GitHub", icon: "🔧", color: "from-orange-500 to-red-500", description: "Version Control" },
-    { name: "Responsive Design", icon: "📱", color: "from-indigo-500 to-purple-500", description: "Mobile-First" },
-    {
-      name: "SEO Optimization",
-      icon: "🔍",
-      color: "from-emerald-500 to-green-500",
-      description: "Search Engine Optimization",
-    },
-    { name: "CMS Integration", icon: "📝", color: "from-cyan-500 to-blue-500", description: "Content Management" },
+    { name: "Django", icon: "🐍", color: "from-green-500 to-green-700", description: "Backend Framework" },
+    { name: "RAG Pipelines", icon: "🧠", color: "from-indigo-500 to-purple-500", description: "AI Search" },
+    { name: "Performance", icon: "⚡", color: "from-orange-500 to-red-500", description: "Web Vitals & Speed" },
+    { name: "Playwright", icon: "🎭", color: "from-pink-500 to-rose-500", description: "Testing & Automation" },
+    { name: "Responsive Design", icon: "📱", color: "from-cyan-500 to-blue-500", description: "Mobile-First" },
+    { name: "Micro-frontends", icon: "🔧", color: "from-violet-500 to-purple-500", description: "Architecture" },
   ]
 
   // Loading screen
@@ -1111,6 +1112,7 @@ export default function Portfolio() {
                           whileInView={{ opacity: 1, x: 0 }}
                           transition={{ delay: i * 0.1 }}
                           viewport={{ once: true }}
+                          whileHover={{ x: 5 }}
                         >
                           <motion.div
                             className="w-1.5 h-1.5 bg-cyan-400 rounded-full mr-2"
